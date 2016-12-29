@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 		# render plain: params[:article].inspect
 
 		@article = Article.new(article_params)
+		@article.user = User.first # 暫定
 		if @article.save
 			# 顯示訊息
 			flash[:success] = "Article was successfully created"

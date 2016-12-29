@@ -1,4 +1,9 @@
-class Article < ActiveRecord::Base
+class User < ActiveRecord::Base
+	# 設定關聯 , 一的一方
+	has_many :article
+
+	# 儲存前先執行
+	before_save { self.email = email.downcase }
 
 	# email驗證格式
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
