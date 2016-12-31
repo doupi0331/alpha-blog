@@ -1,10 +1,16 @@
 <h2 class="page-title">
-	Title: <%= @article.title %>
+	<%= @article.title %>
 </h2>
 <div class="well col-sm-8 col-sm-offset-2">
 	<h4 class="center description">
-		<strong>Description:</strong>
+		<strong>Created by</strong>
 	</h4>
+	<div align="center">
+		<%= link_to(gravatar_for(@article.user, size: 50), user_path(@article.user)) if @article.user%>
+	</div>
+	<div align="center">
+		<%= link_to(@article.user.username, user_path(@article.user)) if @article.user%>
+	</div>
 	<hr>
 
 	<%= simple_format(@article.description) %>
