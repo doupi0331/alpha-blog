@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	# 設定關聯 , 一的一方
-	has_many :article
+	has_many :article, dependent: :destroy
 
 	# 儲存前先執行
 	before_save { self.email = email.downcase }
