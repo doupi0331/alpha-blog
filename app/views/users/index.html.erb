@@ -1,19 +1,27 @@
 <h1 class="page-title">All Alpha Bloggers</h1>
 <div align="center">
+	<div class="row">
+		<%= will_paginate%>
+	</div>
+
 	<% @users.each do |user| %>
-		<div class="well col-md-4 col-md-offset-4">
-			<div>
-				<%= link_to gravatar_for(user), user_path(user)%>
-			</div>
-			<div>
-				<%= link_to user.username, user_path(user)%>
-			</div>
-			<div>
-				<small>
-						<%= pluralize(user.article.count, "article") if user.article%>
-				</small>
+		<div class="row">
+			<div class="well col-md-4 col-md-offset-4">
+				<div>
+					<%= link_to gravatar_for(user), user_path(user)%>
+				</div>
+				<div>
+					<%= link_to user.username, user_path(user)%>
+				</div>
+				<div>
+					<small>
+							<%= pluralize(user.article.count, "article") if user.article%>
+					</small>
+				</div>
 			</div>
 		</div>
-		
 	<% end %>
+	<div class="row">
+		<%= will_paginate%>
+	</div>
 </div>
