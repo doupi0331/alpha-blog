@@ -39,7 +39,7 @@ $navbar-default-bg: #F78585;
 
 .article-actions {
 	border-top: 1px solid #eaeaea;
-	padding-top: 5px;
+	padding-top: 15px;
 }
 
 .description {
@@ -59,12 +59,36 @@ $navbar-default-bg: #F78585;
 
 .article-meta-details {
 	border-top: 1px solid #eaeaea;
-	text-align: right;
+	padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .page-title {
 	text-align: center;
 	padding-bottom: 25px;
+}
+
+.badge {
+  background-color: #e27a7a;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.category-link {
+  color: #fff;
+}
+
+.category-link:hover {
+  color: #fff;
+}
+
+.category-ul {
+  list-style: none;
+}
+
+.input_checkbox input {
+  width: auto !important;
 }
 
 footer {

@@ -15,7 +15,7 @@
 				</div>
 				<div>
 					<small>
-							<%= pluralize(user.article.count, "article") if user.article%>
+						<%= pluralize(user.article.count, "article") if user.article%>
 					</small>
 				</div>
 				<% if logged_in? and current_user.admin? %>
