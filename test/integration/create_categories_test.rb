@@ -1,10 +1,14 @@
 require 'test_helper'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
-
+  def setup
+    @user = User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
+  end
 
   # 模擬新增過程，符合此過程才是正確的
 	test "get new category form and create category" do
+	  #log in, sign_in_as在test_helper.rb
+	  sign_in_as(@user, "password")
 	  # 確認是否有route
 		get new_category_path
 		# 連結至categories/new page
@@ -23,6 +27,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
 	
 	# 模擬新增失敗流程
 	test "invalid category submission results in failure" do
+	  sign_in_as(@user, "password")
 		# 確認是否有route
     get new_category_path
     # 連結至categories/new page
